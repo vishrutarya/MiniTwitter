@@ -1,0 +1,2 @@
+FLASK_APP=minitwitter.py
+FLASK_ENV=development
