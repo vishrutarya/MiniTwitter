@@ -3,12 +3,7 @@
 ## Summary
 This code instantiates MiniTwitter, a simple microblogging service akin to a minimalist version of Twitter (hence the name).
 
-**Goal and functionality.** MiniTwitter's main goal is to faciliate communication over the web by enabling users to publish short textual *posts* that are viewable by all users. After signing up for the service, users are able to:
-1. make posts of their own; 
-1. *follow* other users and see their followed users' posts alongside their own on the 'Home' page; 
-1. see all users' posts on the 'Explore' page.
-
-The Profile page also features the count of the user's followers as well as the count of users they follow. Following and unfollowing occurs via the target user's profile page.
+**Goal and functionality.** MiniTwitter's main goal is to faciliate communication over the web. It does this by enabling users to make textual *posts*, displaying these posts publically as the author's *stream*, and enabling users to follow one another such that each user's *feed* is a chronological list of all the posts made by the user and those the user is following.
 
 **Implementation details.** Despite it's simplicity, MiniTwitter is a full-stack web application with database, application, and visualization layers. It's built in the Python language, uses the Flask web framework, handles data through a SQLite (or MySQL) database, and deploys via a Docker container.[1] The service was built following Miguel Grinberg's Flask tutorial. 
 
