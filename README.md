@@ -3,14 +3,19 @@
 ## Summary
 This code instantiates MiniTwitter, a simple microblogging service akin to a minimalist version of Twitter (hence the name).
 
-**Goal and functionality.** MiniTwitter's main goal is to faciliate communication over the web by enabling users to publish short textual *posts* that are viewable by all users. After signing up for the service, users are able to make posts of their own, *follow* other users and see their followed users' posts alongside their own on the 'Home' page, and see all users' posts on the 'Explore' page. The Profile page also features the count of the user's followers as well as the count of users they follow. Following and unfollowing occurs via the target user's profile page.
+**Goal and functionality.** MiniTwitter's main goal is to faciliate communication over the web by enabling users to publish short textual *posts* that are viewable by all users. After signing up for the service, users are able to:
+1. make posts of their own; 
+1. *follow* other users and see their followed users' posts alongside their own on the 'Home' page; 
+1. see all users' posts on the 'Explore' page.
+
+The Profile page also features the count of the user's followers as well as the count of users they follow. Following and unfollowing occurs via the target user's profile page.
 
 **Implementation details.** Despite it's simplicity, MiniTwitter is a full-stack web application with database, application, and visualization layers. It's built in the Python language, uses the Flask web framework, handles data through a SQLite (or MySQL) database, and deploys via a Docker container.[1] The service was built following Miguel Grinberg's Flask tutorial. 
 
 ## Quick Start
-Navigate to the directory the application should be stored in.
+Navigate to the directory the application should be stored.
 ```
-cd <dir_where_minitwitter_should_be_stored>
+cd <path_to_dir_where_minitwitter_should_be_stored>
 ```
 
 Make a virtual environment in a new dir `env`; activate this virtual environment.
@@ -19,7 +24,7 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-Clone the repo and navigate to it.
+Clone this branch (`del_es`) of the repo and navigate to it.
 ```
 git clone -b del_es https://github.com/vishrutarya/minitwitter.git
 cd minitwitter
@@ -31,10 +36,11 @@ docker-compose up -d --build
 ```
 
 Connect to the service. In the browser, navigate to:
-```<ip_address>:8000
+```
+<ip_address>:8000
 ```
 
-where `ip_address` should be replaced by the IP address of the host machine.[1]
+where `ip_address` should be replaced by the IP address of the host machine.[2]
 
 ## Quick Remove
 Stop and remove the service's container (and networks, volumes, and images).
@@ -42,9 +48,7 @@ Stop and remove the service's container (and networks, volumes, and images).
 docker-compose down
 ```
 
-Optionally, remove the associated Docker images:
-
-Find the relevant images:
+Optionally, remove the associated Docker images. Find the relevant images:
 ```
 docker images
 ```
@@ -56,7 +60,7 @@ docker rmi <IMAGE_ID>
 
 ## Addenda
 ### Remote instance dependency installs
-If MiniTwitter is to be installed on a *remote* instance (eg., provisioned through AWS), three packages (Git, Docker, Docker Compose) must be installed before running the above quick start instructions. To install these packages on Ubuntu 16.04:
+If MiniTwitter is to be installed on a *remote* instance (eg., provisioned through AWS), three packages (Git, Docker, Docker Compose) must be installed before running the above quick start instructions. To install these packages on Ubuntu 16.04, run the following-commands on the remote instance:
 
 ```
 # GIT
@@ -106,5 +110,5 @@ The original version of MiniTwitter, which was deployed locally, included full-t
 For less memory constrained deployments where Elasticsearch is desired, see the `master` branch which includes both Elasticsearch and MySQL containers.
 
 ### Notes
-[1] The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers, one for each of the application, MySQL database, and Elasticsearch search engine for full-text search.
-[2] If you're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
+1. The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers, one for each of the application, MySQL database, and Elasticsearch search engine for full-text search.
+2. If you're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
