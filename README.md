@@ -99,11 +99,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-### Note on Elasticsearch
-The original version of MiniTwitter, which was deployed locally, included full-text search functionality (implemented via the Elasticsearch search engine). Although this worked for a local deployment, Elasticsearch's memory requirements implied deploying it on AWS would require a more expensive instance. Therefore, the Elasticsearch functionality has been deprecated in this repo to make it more widely compatible with remote instances. 
-
-For less memory constrained deployments where Elasticsearch is desired, see the `master` branch which includes both Elasticsearch and MySQL containers.
-
 ### Notes
-1. The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers, one for each of the application, MySQL database, and Elasticsearch search engine for full-text search.
+1. The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers -- one for each of the application, MySQL database, and Elasticsearch (the search engine for full-text search). Full-text search was dropped from this branch (i.e., `del_es`) version due to Elasticsearch's memory requirements: although a local deployment's 8GB RAM was sufficient, remote deployment on Amazon Web Services would required one of its more expensive instances.
 2. If you're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
