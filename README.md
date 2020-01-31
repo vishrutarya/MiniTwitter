@@ -107,4 +107,4 @@ docker-compose --version
 ```
 
 ### Notes
-1. If youi're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
+1. If you're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
