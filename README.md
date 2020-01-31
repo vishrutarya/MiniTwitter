@@ -5,15 +5,15 @@ This code instantiates MiniTwitter, a simple microblogging service akin to a min
 
 **High-level goal and functionality.** MiniTwitter's main goal is to facilitate communication over the web. It does this by enabling users to make textual *posts*, displaying these posts publicly as the author's *stream*, and enabling users to follow one another such that each user's *feed* is a chronological list of all the posts made by the user and those the user is following.
 
-**Technology stack.** Despite it's simplicity, MiniTwitter is a full-stack web application with database, application, and visualization layers. It's built in Python using the Flask web framework, handles data through a SQLite (or MySQL) database and a SQL , and deploys via a Docker container.[1] The service was built following Miguel Grinberg's Flask tutorial. 
+**Technology stack.** Despite it's simplicity, MiniTwitter is a full-stack web application with database, application, and visualization layers. It's built in Python using the Flask web framework, handles data through a SQLite (or MySQL) database, and deploys via a Docker container.[1] The service was built following Miguel Grinberg's Flask tutorial. 
 
 ## Quick Start
-Navigate to the directory the application should be stored.
+Navigate to the directory in which the application should be stored.
 ```
 cd <path_to_dir_where_minitwitter_should_be_stored>
 ```
 
-Make a virtual environment in a new dir `env`; activate this virtual environment.
+Make a virtual environment in a new dir, `env`; activate this virtual environment.
 ```
 python3 -m venv env
 source env/bin/activate
@@ -100,5 +100,5 @@ docker-compose --version
 ```
 
 ### Notes
-1. The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers -- one for each of the application, MySQL database, and Elasticsearch (the search engine for full-text search). Full-text search was dropped from this branch (i.e., `del_es`) version due to Elasticsearch's memory requirements: although a local deployment's 8GB RAM was sufficient, remote deployment on Amazon Web Services would required one of its more expensive instances.
+1. The version on this repo's `master` branch adds full-text search and a MySQL database. This fuller service is organized into three Docker containers -- one for each of the application, MySQL database, and Elasticsearch (the search engine for full-text search). Full-text search was dropped from this branch due to Elasticsearch's memory requirements: although a local deployment's 8GB RAM was sufficient, remote deployment on Amazon Web Services would require a more expensive instance.
 2. If you're launching the web service locally -- i.e., on your laptop or desktop -- the default IP address for your machine is `localhost` which is equivalent to `127.0.0.1`.
