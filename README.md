@@ -11,6 +11,15 @@ This code instantiates MiniTwitter, a simple microblogging service akin to a min
 ### Signup
 ![](/gifs/signup_looped.gif)
 
+### Post
+![](/gifs/post.gif)
+
+### Follow
+![](/gifs/follow.gif)
+
+### Global feed; personal feed
+![](/gifs/all_feed_personal_feed.gif)
+
 ## Quick Start
 Navigate to the directory in which the application should be stored.
 ```
