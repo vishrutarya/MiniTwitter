@@ -9,7 +9,7 @@ This code instantiates MiniTwitter, a simple microblogging service akin to a min
 
 ## Demos
 ### Signup
-![](/gifs/signup.gif)
+![](/gifs/signup_looped.gif)
 
 ## Quick Start
 Navigate to the directory in which the application should be stored.
