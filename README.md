@@ -7,6 +7,12 @@ This code instantiates MiniTwitter, a simple microblogging service akin to a min
 
 **Technology stack.** Despite it's simplicity, MiniTwitter is a full-stack web application with database, application, and visualization layers. It's built in Python using the Flask web framework, handles data through a SQLite (or MySQL) database, employs the Elasticsearch engine for full-text search, and deploys via three Docker containers (application, database, Elasticsearch).[1] The service was built following Miguel Grinberg's Flask tutorial. 
 
+## Demo
+
+### Post
+
+![](/gifs/post.gif)
+
 ## Quick Start
 Navigate to the directory in which the application should be stored.
 ```
